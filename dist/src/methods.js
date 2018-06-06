@@ -290,6 +290,9 @@ var _default = {
   move: {
     version: '>=0.3.18'
   },
+  masternode: {
+    version: '>=0.1.0'
+  },
   ping: {
     version: '>=0.9.0'
   },

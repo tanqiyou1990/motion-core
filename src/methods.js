@@ -127,6 +127,7 @@ export default {
   listWallets: { version: '>=0.15.0' },
   lockUnspent: { version: '>=0.8.0' },
   move: { version: '>=0.3.18' },
+  masternode: { version: '>=0.1.0' },
   ping: { version: '>=0.9.0' },
   preciousBlock: { version: '>=0.14.0' },
   prioritiseTransaction: { version: '>=0.10.0' },
