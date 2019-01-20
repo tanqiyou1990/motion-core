@@ -40,7 +40,7 @@ const client = new Client({ network: 'regtest' });
 ##### Setting a custom port
 
 ```js
-const client = new Client({ port: 28332 });
+const client = new Client({ port: 29902 });
 ```
 
 #### Connecting to an SSL/TLS server with strict checking enabled
@@ -160,7 +160,7 @@ docker run --rm -it ruimarinho/bitcoin-core:0.12-alpine -printtoconsole -rpcuser
 
 These configuration values may also be set on the `bitcoin.conf` file of your platform installation.
 
-By default, port `8332` is used to listen for requests in `mainnet` mode, or `18332` in `testnet` or `regtest` modes. Use the `network` property to initialize the client on the desired mode and automatically set the respective default port. You can optionally set a custom port of your choice too.
+By default, port `9902` is used to listen for requests in `mainnet` mode, or `19902` in `testnet` or `regtest` modes. Use the `network` property to initialize the client on the desired mode and automatically set the respective default port. You can optionally set a custom port of your choice too.
 
 The RPC services binds to the localhost loopback network interface, so use `rpcbind` to change where to bind to and `rpcallowip` to whitelist source IP access.
 
@@ -370,15 +370,15 @@ client.getTransactionByHash('b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c
 //   "level": 20,
 //   "request": {
 //     "headers": {
-//       "host": "localhost:8332",
+//       "host": "localhost:9902",
 //       "accept": "application/json"
 //     },
 //     "id": "82cea4e5-2c85-4284-b9ec-e5876c84e67c",
 //     "method": "GET",
 //     "type": "request",
-//     "uri": "http://localhost:8332/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json"
+//     "uri": "http://localhost:9902/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json"
 //   },
-//   "msg": "Making request 82cea4e5-2c85-4284-b9ec-e5876c84e67c to GET http://localhost:8332/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json",
+//   "msg": "Making request 82cea4e5-2c85-4284-b9ec-e5876c84e67c to GET http://localhost:9902/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json",
 //   "time": "2017-02-07T14:40:35.020Z",
 //   "v": 0
 // }
