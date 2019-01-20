@@ -60,8 +60,8 @@ describe('Client', () => {
       new Client().headers.should.be.false();
     });
 
-    it('should have default host set to `localhost`', () => {
-      new Client().host.should.equal('localhost');
+    it('should have default host set to `127.0.0.1`', () => {
+      new Client().host.should.equal('127.0.0.1');
     });
 
     it('should not have a password set by default', () => {

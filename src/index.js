@@ -47,7 +47,7 @@ class Client {
   constructor({
     agentOptions,
     headers = false,
-    host = 'localhost',
+    host = '127.0.0.1',
     logger = debugnyan('bitcoin-core'),
     network = 'mainnet',
     password,

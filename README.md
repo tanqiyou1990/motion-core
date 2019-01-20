@@ -16,7 +16,7 @@ npm install motion-core --save
 #### Arguments
 1. `[agentOptions]` _(Object)_: Optional `agent` [options](https://github.com/request/request#using-optionsagentoptions) to configure SSL/TLS.
 2. `[headers=false]` _(boolean)_: Whether to return the response headers.
-3. `[host=localhost]` _(string)_: The host to connect to.
+3. `[host=127.0.0.1]` _(string)_: The host to connect to.
 4. `[logger=debugnyan('motion-core')]` _(Function)_: Custom logger (by default, `debugnyan`).
 5. `[network=mainnet]` _(string)_: The network
 6. `[password]` _(string)_: The RPC server user password.
@@ -162,7 +162,7 @@ These configuration values may also be set on the `bitcoin.conf` file of your pl
 
 By default, port `9902` is used to listen for requests in `mainnet` mode, or `19902` in `testnet` or `regtest` modes. Use the `network` property to initialize the client on the desired mode and automatically set the respective default port. You can optionally set a custom port of your choice too.
 
-The RPC services binds to the localhost loopback network interface, so use `rpcbind` to change where to bind to and `rpcallowip` to whitelist source IP access.
+The RPC services binds to the 127.0.0.1 loopback network interface, so use `rpcbind` to change where to bind to and `rpcallowip` to whitelist source IP access.
 
 #### Methods
 All RPC [methods](src/methods.js) are exposed on the client interface as a camelcase'd version of those available on `motiond` (see examples below).
@@ -365,20 +365,20 @@ client.getTransactionByHash('b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c
 
 // {
 //   "name": "motion-core",
-//   "hostname": "localhost",
+//   "hostname": "127.0.0.1",
 //   "pid": 57908,
 //   "level": 20,
 //   "request": {
 //     "headers": {
-//       "host": "localhost:9902",
+//       "host": "127.0.0.1:9902",
 //       "accept": "application/json"
 //     },
 //     "id": "82cea4e5-2c85-4284-b9ec-e5876c84e67c",
 //     "method": "GET",
 //     "type": "request",
-//     "uri": "http://localhost:9902/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json"
+//     "uri": "http://127.0.0.1:9902/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json"
 //   },
-//   "msg": "Making request 82cea4e5-2c85-4284-b9ec-e5876c84e67c to GET http://localhost:9902/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json",
+//   "msg": "Making request 82cea4e5-2c85-4284-b9ec-e5876c84e67c to GET http://127.0.0.1:9902/rest/tx/b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe.json",
 //   "time": "2017-02-07T14:40:35.020Z",
 //   "v": 0
 // }
