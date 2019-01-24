@@ -8,7 +8,7 @@ A modern Vpub Core REST and RPC client to execute administrative tasks, wallet o
 Install the package via `npm`:
 
 ```sh
-npm install vpub-core --save
+npm install @vpubevo/vpub-core --save
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install vpub-core --save
 1. `[agentOptions]` _(Object)_: Optional `agent` [options](https://github.com/request/request#using-optionsagentoptions) to configure SSL/TLS.
 2. `[headers=false]` _(boolean)_: Whether to return the response headers.
 3. `[host=127.0.0.1]` _(string)_: The host to connect to.
-4. `[logger=debugnyan('vpub-core')]` _(Function)_: Custom logger (by default, `debugnyan`).
+4. `[logger=debugnyan('@vpubevo/vpub-core')]` _(Function)_: Custom logger (by default, `debugnyan`).
 5. `[network=mainnet]` _(string)_: The network
 6. `[password]` _(string)_: The RPC server user password.
 7. `[port=[network]]` _(string)_: The RPC server port.
@@ -33,7 +33,7 @@ npm install vpub-core --save
 The `network` will automatically determine the port to connect to, just like the `vpubd` and `vpub-cli` commands.
 
 ```js
-const Client = require('vpub-core');
+const Client = require('@vpubevo/vpub-core');
 const client = new Client({ network: 'regtest' });
 ```
 
@@ -364,7 +364,7 @@ const client = new Client();
 client.getTransactionByHash('b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe');
 
 // {
-//   "name": "vpub-core",
+//   "name": "@vpubevo/vpub-core",
 //   "hostname": "127.0.0.1",
 //   "pid": 57908,
 //   "level": 20,
