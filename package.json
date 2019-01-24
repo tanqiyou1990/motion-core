@@ -1,26 +1,25 @@
 {
-  "name": "motion-core",
-  "version": "2.0.0",
-  "description": "A modern Motion Core REST and RPC client.",
+  "name": "vpub-core",
+  "version": "1.0.0",
+  "description": "A modern Vpub Core REST and RPC client.",
   "keywords": [
-    "motion",
     "vpubd",
     "client",
     "request",
     "rest",
     "rpc"
   ],
-  "homepage": "https://github.com/tanqiyou1990/motion-core",
-  "bugs": "https://github.com/tanqiyou1990/motion-core/issues",
+  "homepage": "https://github.com/tanqiyou1990/vpub-core",
+  "bugs": "https://github.com/tanqiyou1990/vpub-core/issues",
   "license": "MIT",
   "author": {
-    "name": "Rui Marinho",
-    "email": "ruipmarinho@gmail.com"
+    "name": "Tan",
+    "email": "tanqiyou@gmail.com"
   },
   "main": "dist/src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tanqiyou1990/motion-core.git"
+    "url": "https://github.com/tanqiyou1990/vpub-core.git"
   },
   "scripts": {
     "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
