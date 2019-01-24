@@ -1,5 +1,5 @@
 {
-  "name": "vpub-core",
+  "name": "@vpubevo/vpub-core",
   "version": "1.0.0",
   "description": "A modern Vpub Core REST and RPC client.",
   "keywords": [
