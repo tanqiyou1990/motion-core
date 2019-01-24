@@ -1,5 +1,5 @@
-# motion-core
-A modern Motion Core REST and RPC client to execute administrative tasks, wallet operations and queries about network and the blockchain.
+# vpub-core
+A modern Vpub Core REST and RPC client to execute administrative tasks, wallet operations and queries about network and the blockchain.
 
 ## Status
 [![npm version][npm-image]][npm-url] [![build status][travis-image]][travis-url]
@@ -8,7 +8,7 @@ A modern Motion Core REST and RPC client to execute administrative tasks, wallet
 Install the package via `npm`:
 
 ```sh
-npm install motion-core --save
+npm install vpub-core --save
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install motion-core --save
 1. `[agentOptions]` _(Object)_: Optional `agent` [options](https://github.com/request/request#using-optionsagentoptions) to configure SSL/TLS.
 2. `[headers=false]` _(boolean)_: Whether to return the response headers.
 3. `[host=127.0.0.1]` _(string)_: The host to connect to.
-4. `[logger=debugnyan('motion-core')]` _(Function)_: Custom logger (by default, `debugnyan`).
+4. `[logger=debugnyan('vpub-core')]` _(Function)_: Custom logger (by default, `debugnyan`).
 5. `[network=mainnet]` _(string)_: The network
 6. `[password]` _(string)_: The RPC server user password.
 7. `[port=[network]]` _(string)_: The RPC server port.
@@ -30,10 +30,10 @@ npm install motion-core --save
 
 ### Examples
 #### Using network mode
-The `network` will automatically determine the port to connect to, just like the `motiond` and `motion-cli` commands.
+The `network` will automatically determine the port to connect to, just like the `vpubd` and `vpub-cli` commands.
 
 ```js
-const Client = require('motion-core');
+const Client = require('vpub-core');
 const client = new Client({ network: 'regtest' });
 ```
 
@@ -50,7 +50,7 @@ By default, when `ssl` is enabled, strict checking is implicitly enabled.
 const fs = require('fs');
 const client = new Client({
   agentOptions: {
-    ca: fs.readFileSync('/etc/ssl/motiond/cert.pem')
+    ca: fs.readFileSync('/etc/ssl/vpubd/cert.pem')
   },
   ssl: true
 });
@@ -80,7 +80,7 @@ client.getInfo((error, help) => console.log(help));
 ```
 
 #### Returning headers in the response
-For compatibility with other Motion Core clients.
+For compatibility with other Vpub Core clients.
 
 ```js
 const client = new Client({ headers: true });
@@ -209,13 +209,13 @@ Support for the REST interface is still **experimental** and the API is still su
 
 Error handling is still fragile so avoid passing user input.
 
-Start the `motiond` with the REST server enabled:
+Start the `vpubd` with the REST server enabled:
 
 ```sh
 docker run --rm -it ruimarinho/bitcoin-core:0.12-alpine -printtoconsole -server -rest
 ```
 
-These configuration values may also be set on the `motion.conf` file of your platform installation. Use `txindex=1` if you'd like to enable full transaction query support (note: this will take a considerable amount of time on the first run).
+These configuration values may also be set on the `vpub.conf` file of your platform installation. Use `txindex=1` if you'd like to enable full transaction query support (note: this will take a considerable amount of time on the first run).
 
 ### Methods
 
@@ -350,13 +350,13 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 3650 -nod
 
 ## Logging
 
-By default, all requests made with `motion-core` are logged using [uphold/debugnyan](https://github.com/uphold/debugnyan) with `motion-core` as the logging namespace.
+By default, all requests made with `vpub-core` are logged using [uphold/debugnyan](https://github.com/uphold/debugnyan) with `vpub-core` as the logging namespace.
 
 Please note that all sensitive data is obfuscated before calling the logger.
 
 #### Example
 
-Example output defining the environment variable `DEBUG=motion-core`:
+Example output defining the environment variable `DEBUG=vpub-core`:
 
 ```javascript
 const client = new Client();
@@ -364,7 +364,7 @@ const client = new Client();
 client.getTransactionByHash('b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c5cbeb01e686fe');
 
 // {
-//   "name": "motion-core",
+//   "name": "vpub-core",
 //   "hostname": "127.0.0.1",
 //   "pid": 57908,
 //   "level": 20,
@@ -389,9 +389,9 @@ client.getTransactionByHash('b4dd08f32be15d96b7166fd77afd18aece7480f72af6c9c7f9c
 A custom logger can be passed via the `logger` option and it should implement [bunyan's log levels](https://github.com/trentm/node-bunyan#levels).
 
 ## Tests
-Currently the test suite is tailored for Docker (including `docker-compose`) due to the multitude of different `motiond` configurations that are required in order to get the test suite passing.
+Currently the test suite is tailored for Docker (including `docker-compose`) due to the multitude of different `vpubd` configurations that are required in order to get the test suite passing.
 
-To test using a local installation of `node.js` but with dependencies (e.g. `motiond`) running inside Docker:
+To test using a local installation of `node.js` but with dependencies (e.g. `vpubd`) running inside Docker:
 
 ```sh
 npm run dependencies
@@ -412,6 +412,3 @@ npm version [<newversion> | major | minor | patch] -m "Release %s"
 
 ## License
 MIT
-
-[npm-image]: https://img.shields.io/npm/v/motion-core.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/motion-core
