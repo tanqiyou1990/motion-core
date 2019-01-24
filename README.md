@@ -165,7 +165,7 @@ By default, port `9902` is used to listen for requests in `mainnet` mode, or `19
 The RPC services binds to the 127.0.0.1 loopback network interface, so use `rpcbind` to change where to bind to and `rpcallowip` to whitelist source IP access.
 
 #### Methods
-All RPC [methods](src/methods.js) are exposed on the client interface as a camelcase'd version of those available on `motiond` (see examples below).
+All RPC [methods](src/methods.js) are exposed on the client interface as a camelcase'd version of those available on `vpubd` (see examples below).
 
 For a more complete reference about which methods are available, check the [RPC documentation](https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs) on the [Bitcoin Core Developer Reference website](https://bitcoin.org/en/developer-reference).
 
